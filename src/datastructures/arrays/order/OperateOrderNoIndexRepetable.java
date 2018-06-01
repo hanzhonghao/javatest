@@ -1,25 +1,39 @@
-package datastructures.arrays.noorder;
+package datastructures.arrays.order;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by zhonghao.han on 5/31/2018.
- * 3演示操作直接使用数据操作无无序数组,*** 存放重复的值
+ * 5演示操作直接使用数据操作有序数组,*** 存放重复的值
  */
-public class OperateNoIndexRepetable {
+public class OperateOrderNoIndexRepetable {
     private int[] datas = null;//定义数据
 
     private int currentIndex = 0;//定义索引
 
-    public OperateNoIndexRepetable(int length) {
+    public OperateOrderNoIndexRepetable(int length) {
         datas = new int[length];
     }
 
     public int insert(int data) {
-        datas[currentIndex] = data;
+        //假设顺序是升序
+        int index =0;
+        //1.查找数据data应该存放的位置
+        for (index=0;index<currentIndex;index++){
+            if(datas[index]>data){
+                break;
+            }
+        }
+        //2.把这个位置及其后面的数据，向后移动一位
+        for (int i =currentIndex;i>index;i--){
+            datas[i]=datas[i-1];
+        }
+        //3.把data设置到应该存放的位置
+        datas[index] = data;
+
         currentIndex++;
-        return currentIndex - 1;
+        return currentIndex -1;//返回自增前的地址
     }
 /**
  *获取数据data在数组中的索引位置
@@ -43,7 +57,7 @@ public class OperateNoIndexRepetable {
         int index = getIndex(0,data);
         //循环向后查找这个方法，直到找不到为止
         while(index>=0){
-            //2.同使用索引的而方法，由索引删除数据
+            //2.同使用索引的方法，由索引删除数据
             for (int i = index; i < currentIndex; i++) {
                 datas[i] = datas[i + 1];
             }
@@ -75,7 +89,7 @@ public class OperateNoIndexRepetable {
     }
 
     public static void main(String args[]) {
-        OperateNoIndexRepetable op = new OperateNoIndexRepetable(20);
+        OperateOrderNoIndexRepetable op = new OperateOrderNoIndexRepetable(20);
         op.insert(1);
         op.insert(3);
         op.insert(3);

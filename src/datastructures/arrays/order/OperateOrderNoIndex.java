@@ -1,22 +1,36 @@
-package datastructures.arrays.noorder;
+package datastructures.arrays.order;
 
 /**
  * Created by zhonghao.han on 5/31/2018.
- * 2演示操作直接使用数据操作无无序数组,存放不重复的值
+ * 4演示操作直接使用数据操作有序数组,存放不重复的值
  */
-public class OperateNoIndex {
+public class OperateOrderNoIndex {
     private int[] datas = null;//定义数据
 
     private int currentIndex = 0;//定义索引
 
-    public OperateNoIndex(int length) {
+    public OperateOrderNoIndex(int length) {
         datas = new int[length];
     }
 
     public int insert(int data) {
-        datas[currentIndex] = data;
+        //假设顺序是升序
+        int index =0;
+        //1.查找数据data应该存放的位置
+        for (index=0;index<currentIndex;index++){
+            if(datas[index]>data){
+                break;
+            }
+        }
+        //2.把这个位置及其后面的数据，向后移动一位
+        for (int i =currentIndex;i>index;i--){
+            datas[i]=datas[i-1];
+        }
+        //3.把data设置到应该存放的位置
+        datas[index] = data;
+
         currentIndex++;
-        return currentIndex - 1;
+        return currentIndex -1;//返回自增前的地址
     }
 
     public int getIndex(int data) {
@@ -60,7 +74,7 @@ public class OperateNoIndex {
     }
 
     public static void main(String args[]) {
-        OperateNoIndex op = new OperateNoIndex(20);
+        OperateOrderNoIndex op = new OperateOrderNoIndex(20);
         op.insert(1);
         op.insert(3);
         op.insert(4);

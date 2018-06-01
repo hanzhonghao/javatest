@@ -2,7 +2,7 @@ package datastructures.arrays.noorder;
 
 /**
  * Created by zhonghao.han on 5/31/2018.
- * 通过索引演示操作无序数组
+ * 1通过索引演示操作无序数组
  */
 public class OperateWithIndex {
     private int[] datas = null;//定义数据
