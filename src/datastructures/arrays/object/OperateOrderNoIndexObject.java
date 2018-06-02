@@ -2,7 +2,7 @@ package datastructures.arrays.object;
 
 /**
  * Created by zhonghao.han on 5/31/2018.
- * 8演示操作直接使用数据操作有序数组,存放不重复的对象
+ * 8演示操作直接使用对象操作有序数组,存放不重复的对象
  */
 public class OperateOrderNoIndexObject {
     private UserModel1[] datas = null;//定义数据

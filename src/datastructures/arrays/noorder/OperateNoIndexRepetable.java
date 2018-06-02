@@ -41,7 +41,7 @@ public class OperateNoIndexRepetable {
     public void remove(int data) {
         //1.查找这个数据对应的索引
         int index = getIndex(0,data);
-        //循环向后查找这个方法，直到找不到为止
+        //循环向后查找这个索引，直到找不到为止
         while(index>=0){
             //2.同使用索引的而方法，由索引删除数据
             for (int i = index; i < currentIndex; i++) {
