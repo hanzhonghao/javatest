@@ -1,8 +1,8 @@
 # javatest
 Daily Java data structure and algorithm exercises
-
+暂时不需要展示这些图片
 # First day Test essence 
-//(![image](https://github.com/hanzhonghao/javatest/blob/master/pictures/array/array.png))
+//(![image](https:///github.com/hanzhonghao/javatest/blob/master/pictures/array/array.png))
 
 # Second day Test essence 
 //()![image](https:///github.com/hanzhonghao/javatest/blob/master/pictures/array/array2.png))
