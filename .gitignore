@@ -1,1 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/inspectionProfiles/
+.idea/workspace.xml
+out/
+/src/datastructures/company/WordStreamingNativeSample.java
+/src/resources/technology.pcm16k
