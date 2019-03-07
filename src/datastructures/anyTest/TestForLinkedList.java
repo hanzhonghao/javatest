@@ -24,4 +24,26 @@ public class TestForLinkedList {
       return pre;
     }
   }
+
+  public Node removeLastthNode(Node head,int k){
+    if(k<=0||head==null){
+      return head;
+    }
+    Node p = head;
+    for(int i =0;i<k;i++){
+      if(p.next!=null){
+        p=p.next;
+      }else{
+        return head;
+      }
+    }
+
+    Node q =head;
+    while(p.next!=null){
+      p=p.next;
+      q=q.next;
+    }
+    q.next= q.next.next;
+    return head;
+  }
 }
