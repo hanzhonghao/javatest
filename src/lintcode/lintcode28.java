@@ -49,4 +49,5 @@ public class lintcode28 {
     boolean b = lintcode28.searchMatrix(n, target);
     System.out.println(b);
   }
+
 }
